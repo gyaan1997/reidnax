@@ -32,9 +32,9 @@ const StyledTableRow = styled(TableRow)(({ index }) => ({
 const StyledTypography = styled(Typography)({
   marginBottom: '20px',
   // textAlign: 'center',
-  marginLeft:"200px",
+  marginLeft:"180px",
 
-
+  cursor:"pointer",
   fontWeight: 'bold',
   fontSize: '1.5rem',
   color: '#333', // Add your desired color
@@ -58,28 +58,28 @@ const DataContent = () => {
   }, []);
   return (
     <StyledDiv>
-      <StyledTypography variant="h4">Sales Data for 2022</StyledTypography>
+      <StyledTypography variant="h4"> Car sales Chart for Year-2022</StyledTypography>
       <StyledTableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
               <TableCell>Month</TableCell>
-              <TableCell>ProductA</TableCell>
-              <TableCell>ProductB</TableCell>
-              <TableCell>ProductC</TableCell>
-              <TableCell>ProductD</TableCell>
-              <TableCell>ProductE</TableCell>
+              <TableCell>Tesla</TableCell>
+              <TableCell>Nissan</TableCell>
+              <TableCell>Chevrolet</TableCell>
+              <TableCell>BMW</TableCell>
+              <TableCell>Audi</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data.map((row, index) => (
               <StyledTableRow key={index} index={index}>
                 <TableCell>{row.Month}</TableCell>
-                <TableCell>{row.ProductA}</TableCell>
-                <TableCell>{row.ProductB}</TableCell>
-                <TableCell>{row.ProductC}</TableCell>
-                <TableCell>{row.ProductD}</TableCell>
-                <TableCell>{row.ProductE}</TableCell>
+                <TableCell>{row.Tesla}</TableCell>
+                <TableCell>{row.Nissan}</TableCell>
+                <TableCell>{row.Chevrolet}</TableCell>
+                <TableCell>{row.BMW}</TableCell>
+                <TableCell>{row.Audi}</TableCell>
               </StyledTableRow>
             ))}
           </TableBody>
