@@ -1,0 +1,14 @@
+[
+  { "Month": "Jan", "Tesla": 250, "Nissan": 221, "Chevrolet": 300, "BMW": 180, "Audi": 150 },
+  { "Month": "Feb", "Tesla": 280, "Nissan": 242, "Chevrolet": 357, "BMW": 200, "Audi": 170 },
+  { "Month": "Mar", "Tesla": 236, "Nissan": 213, "Chevrolet": 326, "BMW": 190, "Audi": 160 },
+  { "Month": "Apr", "Tesla": 30, "Nissan": 264, "Chevrolet": 385, "BMW": 220, "Audi": 180 },
+  { "Month": "May", "Tesla": 27, "Nissan": 235, "Chevrolet": 314, "BMW": 210, "Audi": 190 },
+  { "Month": "Jun", "Tesla": 296, "Nissan": 256, "Chevrolet": 375, "BMW": 240, "Audi": 200 },
+  { "Month": "Jul", "Tesla": 324, "Nissan": 285, "Chevrolet": 40, "BMW": 260, "Audi": 220 },
+  { "Month": "Aug", "Tesla": 264, "Nissan": 224, "Chevrolet": 36, "BMW": 280, "Audi": 240 },
+  { "Month": "Sep", "Tesla": 334, "Nissan": 304, "Chevrolet": 42, "BMW": 300, "Audi": 260 },
+  { "Month": "Oct", "Tesla": 205, "Nissan": 183, "Chevrolet": 255, "BMW": 170, "Audi": 140 },
+  { "Month": "Nov", "Tesla": 215, "Nissan": 233, "Chevrolet": 285, "BMW": 190, "Audi": 160 },
+  { "Month": "Dec", "Tesla": 267, "Nissan": 203, "Chevrolet": 324, "BMW": 210, "Audi": 180 }
+]

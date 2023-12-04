@@ -1,0 +1,6 @@
+# Ignore jwtutills
+jwtutills/
+
+
+node_modules/
+../client/
