@@ -8,19 +8,19 @@ import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
 // import '../Login/login.css'
 function SignUp() {
-    const [username,setUsername]=useState("");
+    const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     const navigate = useNavigate(); // Initialize the useNavigate hook
 
 
     const handleSignUp = async () => {
         try {
-          const response = await fetch('http://localhost:5000/signup', {
+          const response = await fetch('http://localhost:5001/signup', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ email, password }),
           });
     
           if (response.ok) {
@@ -44,10 +44,10 @@ function SignUp() {
             </Typography>
             <form style={{ width: '60%' }}>
               <TextField
-                label="Username"
+                label="email"
                 variant="outlined"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 margin="normal"
                 fullWidth
               />

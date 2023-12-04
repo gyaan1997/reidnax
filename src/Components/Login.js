@@ -8,16 +8,18 @@ import Typography from '@mui/material/Typography';
 import './login.css'
 import { useNavigate } from 'react-router-dom';
 function Login() {
-    const [username,setUsername]=useState("");
-
+    const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+      const [errorMessage, setErrorMessage] = useState(""); // New state for error message
+      const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     const Navigate=useNavigate();
 
     const handleLogin = async () => {
         try {
-          const body = JSON.stringify({ username, password });
+          const body = JSON.stringify({ email, password });
 
-          const response = await fetch('http://localhost:5000/login', {
+          const response = await fetch('http://localhost:5001/login', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -31,11 +33,22 @@ function Login() {
             localStorage.setItem('jwtToken', token);
             Navigate('./analytics')
            
-          } else {
+          }
+          else if (response.status === 401) {
+            // Authentication failed
+            setErrorMessage('User not signed up. Please create an account.'); // Set error message
+            setIsLoggedIn(true);
+          
+          }
+           else {
             console.error('Authentication failed');
+            setIsLoggedIn(false);
+
           }
         } catch (error) {
           console.error('Error during authentication', error);
+          setIsLoggedIn(false);
+
         }
       
       };
@@ -45,12 +58,17 @@ function Login() {
             <Typography variant="h5" component="div" gutterBottom>
               Login
             </Typography>
+            {errorMessage && (
+          <Typography color="error" style={{ marginBottom: isLoggedIn ? '16px' : '0' }}>
+            {errorMessage}
+          </Typography>
+        )}
             <form style={{ width: '60%' }}>
               <TextField
-                label="Username"
+                label="email"
                 variant="outlined"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 margin="normal"
                 fullWidth
               />
